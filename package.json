@@ -5,9 +5,17 @@
   "main": "index.js",
   "bin": "bin/webpack-dev-server.js",
   "scripts": {
-    "start": "webpack-dev-server  --inline --content-base --host=0.0.0.0 ."
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback",
+    "start:prod": "npm run build && node server.bundle.js",
+    "build:client": "webpack",
+    "build:server": "webpack --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server"
   },
   "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "if-env": "^1.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0"

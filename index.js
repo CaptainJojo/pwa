@@ -1,5 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './modules/App'
+import { Router, browserHistory } from 'react-router'
+// import routes and pass them into <Router/>
+import routes from './modules/routes'
 
-render(<App/>, document.getElementById('app'))
+render(
+  <Router routes={routes} history={browserHistory}/>,
+  document.getElementById('app')
+)
