@@ -3,24 +3,29 @@
     <meta charset=utf-8/>
     <meta name="theme-color" content="#2F3BA2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
     <title>My First React Router App</title>
   </head>
   <body>
     <div id=app> test</div>
     <link rel="stylesheet" href="/index.css">
-    <link rel="manifest" href="/manifest.json">
+
     <script src="/bundle.js"></script>
     <script>
-    if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' })
-          .then(function(registration) {
-                console.log('Service Worker Registered');
-          });
 
-        navigator.serviceWorker.ready.then(function(registration) {
-           console.log('Service Worker Ready');
-        });
-      }
+      if ('serviceWorker' in navigator) {
+          console.log('Service Worker is supported');
+            navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function() {
+            return navigator.serviceWorker.ready;
+          }).then(function(reg) {
+            console.log('Service Worker is ready :^)', reg);
+            reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
+              console.log('endpoint:', sub.endpoint);
+            });
+          }).catch(function(error) {
+            console.log('Service Worker error :^(', error);
+          });
+        }
     </script>
   </body>
 </html>
