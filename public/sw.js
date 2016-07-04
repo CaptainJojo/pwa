@@ -83,7 +83,7 @@ function parse(e){for(var t,r=[],n=0,o=0,a="";null!=(t=PATH_REGEXP.exec(e));){va
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/bundle.js","8feb02b6b60e0998cfe4b52aa3803572"],["/cat.png","d95cf4566ff3ee9a7367b2c63c466a77"],["/donut.png","3a6dbd044f74f7f4d5d5dd155d696c69"],["/duck.png","2ab52d375e813e4b93df31a7fc7ad924"],["/index.css","a359b9994133efdb9ccba84fc0247b10"],["/index.html","3721c79efc5adc5306f4683e593df7f5"],["/racoon.png","c3542adb7613dacf2ac2c4c8d59232d1"]];
+var PrecacheConfig = [["/bundle.js","8feb02b6b60e0998cfe4b52aa3803572"],["/cat.png","d95cf4566ff3ee9a7367b2c63c466a77"],["/donut.png","3a6dbd044f74f7f4d5d5dd155d696c69"],["/duck.png","2ab52d375e813e4b93df31a7fc7ad924"],["/images/touch/apple-touch-icon.png","7326f54bfe6776293f08b34c3a5fde7b"],["/images/touch/chrome-touch-icon-192x192.png","571f134f59f14a6d298ddd66c015b293"],["/images/touch/icon-128x128.png","7c46d686765c49b813ac5eb34fabf712"],["/images/touch/ms-touch-icon-144x144-precomposed.png","452d90b250d6f41a0c8f9db729113ffd"],["/index.css","a359b9994133efdb9ccba84fc0247b10"],["/index.html","3721c79efc5adc5306f4683e593df7f5"],["/racoon.png","c3542adb7613dacf2ac2c4c8d59232d1"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
