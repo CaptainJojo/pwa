@@ -1,14 +1,23 @@
-<!doctype html public "storage">
 <html>
-<meta charset=utf-8/>
-<title>My First React Router App</title>
-<div id=app></div>
-<link rel="stylesheet" href="/index.css">
-<script src="/bundle.js"></script>
-<script>
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-           .register('/sw.js')
-           .then(function() { console.log("Service Worker Registered"); });
-}
-</script>
+  <head>
+    <meta charset=utf-8/>
+    <title>My First React Router App</title>
+  </head>
+  <body>
+    <div id=app> test</div>
+    <link rel="stylesheet" href="/index.css">
+    <script src="/bundle.js"></script>
+    <script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+                console.log('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+           console.log('Service Worker Ready');
+        });
+      }
+    </script>
+  </body>
+</html>
