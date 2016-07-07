@@ -1,0 +1,11 @@
+version: "2"
+services:
+    pwa-planet:
+        build:
+            context: .
+            dockerfile: docker/pwa-planet/Dockerfile
+        ports:
+            - '8080:8080'
+        volumes:
+            - .:/usr/src/pwa-planet
+
