@@ -9,11 +9,10 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <h1>Ghettohub Issues</h1>
+        <h1>Nos planetes</h1>
         <ul role="nav">
           <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/repos">Repos</NavLink></li>
+          <li><NavLink to="/planets">Planete</NavLink></li>
         </ul>
 
         {/* add this */}
