@@ -5,4 +5,10 @@
 <div id=app></div>
 <link rel="stylesheet" href="/index.css">
 <script src="/bundle.js"></script>
-
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
