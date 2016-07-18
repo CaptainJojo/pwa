@@ -158,17 +158,13 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _About = __webpack_require__(11);
+	var _Planets = __webpack_require__(11);
 
-	var _About2 = _interopRequireDefault(_About);
+	var _Planets2 = _interopRequireDefault(_Planets);
 
-	var _Repos = __webpack_require__(12);
+	var _Planet = __webpack_require__(12);
 
-	var _Repos2 = _interopRequireDefault(_Repos);
-
-	var _Repo = __webpack_require__(13);
-
-	var _Repo2 = _interopRequireDefault(_Repo);
+	var _Planet2 = _interopRequireDefault(_Planet);
 
 	var _Home = __webpack_require__(10);
 
@@ -180,12 +176,8 @@
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	  _react2.default.createElement(
-	    _reactRouter.Route,
-	    { path: '/repos', component: _Repos2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: '/repos/:userName/:repoName', component: _Repo2.default })
-	  ),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/planets', component: _Planets2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/planet/:name', component: _Planet2.default })
 	);
 
 /***/ },
@@ -223,7 +215,7 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Ghettohub Issues'
+	        'Nos planetes'
 	      ),
 	      _react2.default.createElement(
 	        'ul',
@@ -242,17 +234,8 @@
 	          null,
 	          _react2.default.createElement(
 	            _NavLink2.default,
-	            { to: '/about' },
-	            'About'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/repos' },
-	            'Repos'
+	            { to: '/planets' },
+	            'Planete'
 	          )
 	        )
 	      ),
@@ -329,15 +312,65 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _NavLink = __webpack_require__(9);
+
+	var _NavLink2 = _interopRequireDefault(_NavLink);
+
+	var _reactRouter = __webpack_require__(6);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'About',
+	  displayName: 'Planets',
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      'About222'
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Nos planetes'
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _NavLink2.default,
+	            { to: '/planet/duck' },
+	            _react2.default.createElement('img', { src: '/duck.png' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _NavLink2.default,
+	            { to: '/planet/donut' },
+	            _react2.default.createElement('img', { src: '/donut.png' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _NavLink2.default,
+	            { to: '/planet/cat' },
+	            _react2.default.createElement('img', { src: '/cat.png' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _NavLink2.default,
+	            { to: '/planet/racoon' },
+	            _react2.default.createElement('img', { src: '/racoon.png' })
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
@@ -356,79 +389,22 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavLink = __webpack_require__(9);
-
-	var _NavLink2 = _interopRequireDefault(_NavLink);
-
-	var _reactRouter = __webpack_require__(6);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Repos',
+	  displayName: 'Planet',
 	  render: function render() {
+	    var imgSrc = '/' + this.props.params.name + '.png';
+
 	    return _react2.default.createElement(
 	      'div',
 	      null,
 	      _react2.default.createElement(
 	        'h2',
 	        null,
-	        'Repos'
+	        this.props.params.name
 	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        null,
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/repos/reactjs/react-router' },
-	            'React Router'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/repos/facebook/react' },
-	            'React'
-	          )
-	        )
-	      ),
-	      this.props.children
-	    );
-	  }
-	});
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'Repo',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        this.props.params.repoName
-	      )
+	      _react2.default.createElement('img', { src: imgSrc })
 	    );
 	  }
 	});
