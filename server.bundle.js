@@ -97,7 +97,7 @@
 	});
 
 	function renderPage(appHtml) {
-	  return '\n    <!doctype html public="storage">\n    <html>\n    <meta charset=utf-8/>\n    <title>My First React Router App</title>\n    <link rel=stylesheet href=/index.css>\n    <div id=app>' + appHtml + '</div>\n    <script src="/bundle.js"></script>\n   ';
+	  return '\n    <!doctype html public="storage">\n    <html>\n    <meta charset=utf-8/>\n    <title>My First React Router App</title>\n    <link rel=stylesheet href=/index.css>\n    <div id=app>' + appHtml + '</div>\n    <script src="/bundle.js"></script>\n    <script>\n    if(\'serviceWorker\' in navigator) {\n        navigator.serviceWorker.register(\'/sw.js\', { scope: \'/\' })\n          .then(function(registration) {\n                console.log(\'Service Worker Registered\');\n          });\n\n        navigator.serviceWorker.ready.then(function(registration) {\n           console.log(\'Service Worker Ready\');\n        });\n      }\n    </script>\n   ';
 	}
 
 	var PORT = process.env.PORT || 8080;
